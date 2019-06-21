@@ -3,7 +3,7 @@ import os ,time
 import requests
 pyautogui.click(x=485, y=472)
 time.sleep(2)
-pyautogui.click(x=146, y=619)
+pyautogui.click(x=146, y=618)
 time.sleep(2)
 pyautogui.click(x=427, y=426)
 time.sleep(2)
