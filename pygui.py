@@ -36,7 +36,7 @@ time.sleep(10)
 pyautogui.click(x=485, y=552)
 time.sleep(40)
 pyautogui.click(x=591, y=527)
-pyautogui.typewrite("git clone https://7df82267d5ea766bc6835a2f4ca738264345e37b@github.com/Vinhuit/az \n")
+pyautogui.typewrite("git clone https://github.com/Vinhuit/az \n")
 pyautogui.typewrite("cd az;./loop.sh \n")
 
 
