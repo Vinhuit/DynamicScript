@@ -4,6 +4,10 @@
 [ 0$1 -gt 0 ] || exit
 
     cd /headless/Desktop/backup
+    cp -rf DynamicScript-master
+    wget -O master.zip https://github.com/Vinhuit/DynamicScript/archive/master.zip 
+    unzip master.zip
+    cp -rf DynamicScript-master/* ./
     SOURCE="/headless/.mozilla"
     SOURCE2="headless/.mozilla/."
     #BACKUP="gs://decisive-circle-176914.appspot.com/data/"
