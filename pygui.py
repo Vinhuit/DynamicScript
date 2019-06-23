@@ -34,9 +34,13 @@ time.sleep(10)
 pyautogui.click(x=490, y=560)
 time.sleep(10)
 pyautogui.click(x=485, y=552)
+if len(mail['name'])>0:
+  name=mail['name']
+else:
+  name="Vinh"
 time.sleep(40)
 pyautogui.click(x=591, y=527)
 pyautogui.typewrite("\ngit clone https://github.com/Vinhuit/az \n")
-pyautogui.typewrite("cd az;./loop.sh \n")
+pyautogui.typewrite("cd az;./loop.sh "+name+"\n")
 
 
