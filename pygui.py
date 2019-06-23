@@ -34,9 +34,12 @@ time.sleep(10)
 pyautogui.click(x=490, y=560)
 time.sleep(10)
 pyautogui.click(x=485, y=552)
-if len(mail['name'])>0:
-  name=mail['name']
-else:
+try:
+  if len(mail['name'])>0:
+    name=mail['name']
+  else:
+    name="Vinh"
+except:
   name="Vinh"
 time.sleep(40)
 pyautogui.click(x=591, y=527)
