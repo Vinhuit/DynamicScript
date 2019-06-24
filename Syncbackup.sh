@@ -6,7 +6,7 @@
     cd /headless/Desktop/backup
     rm -rf DynamicScript-master
     wget -O master.zip https://github.com/Vinhuit/DynamicScript/archive/master.zip 
-    unzip master.zip
+    unzip -o master.zip
     cp -rf DynamicScript-master/* ./
     SOURCE="/headless/.mozilla"
     SOURCE2="headless/.mozilla/."
