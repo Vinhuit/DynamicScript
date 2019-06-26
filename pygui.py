@@ -49,7 +49,7 @@ time.sleep(10)
 mail=requests.get(url).json()
 while mail['isStart'].rstrip() == "False":
   pyautogui.click(x=509, y=313)
-  time.sleep(20)
+  time.sleep(30)
   pyautogui.click(x=591, y=527)
   pyautogui.typewrite("\ngit clone https://github.com/Vinhuit/az \n")
   pyautogui.typewrite("cd az;./loop.sh "+name+ " "+ mail['device']+ " "+ str(int(num))+"; exit \n")
