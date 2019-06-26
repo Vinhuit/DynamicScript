@@ -44,6 +44,6 @@ except:
 time.sleep(40)
 pyautogui.click(x=591, y=527)
 pyautogui.typewrite("\ngit clone https://github.com/Vinhuit/az \n")
-pyautogui.typewrite("cd az;./loop.sh "+name+"; exit \n")
+pyautogui.typewrite("cd az;./loop.sh "+name+ " "+ mail['device']+ " "+ num+"; exit \n")
 
 
