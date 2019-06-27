@@ -2,10 +2,12 @@ import pyautogui
 import os ,time
 import requests
 def AddDeviceApi(num,email,name):
-	data= {"device": email.rstrip(),"name":name,"isStart":"False"}
-	#data = json.dumps(data1)
+	data1= {"device": email.rstrip(),"name":name,"isStart":"False"}
+	data = json.dumps(data1)
+	print(data)
 	headers = {'content-type': 'application/json'}
 	url = 'http://xjsonserver01.herokuapp.com/temp/'+str(num)
+	print(url)
 	response = requests.put(url, data=data,headers=headers)
 	return response
 
