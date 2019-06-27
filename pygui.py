@@ -7,7 +7,7 @@ def AddDeviceApi(num,email,name):
 	headers = {'content-type': 'application/json'}
 	url = 'http://xjsonserver01.herokuapp.com/temp/'+str(num)
 	response = requests.put(url, data=data,headers=headers)
-  return response
+	return response
 
 pyautogui.click(x=485, y=472)
 time.sleep(2)
