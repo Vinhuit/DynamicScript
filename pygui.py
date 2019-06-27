@@ -1,6 +1,6 @@
 import pyautogui
 import os ,time
-import requests
+import requests, json
 def AddDeviceApi(num,email,name):
 	data1= {"device": email.rstrip(),"name":name,"isStart":"False"}
 	data = json.dumps(data1)
