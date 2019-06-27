@@ -1,6 +1,14 @@
 import pyautogui
 import os ,time
 import requests
+def AddDeviceApi(num,email,name):
+	data= {"device": email.rstrip(),"name":name,"isStart":"False"}
+	#data = json.dumps(data1)
+	headers = {'content-type': 'application/json'}
+	url = 'http://xjsonserver01.herokuapp.com/temp/'+str(num)
+	response = requests.put(url, data=data,headers=headers)
+  return response
+
 pyautogui.click(x=485, y=472)
 time.sleep(2)
 pyautogui.click(x=146, y=618)
@@ -41,6 +49,7 @@ try:
     name="Vinh"
 except:
   name="Vinh"
+AddDeviceApi(str(int(num)),mail['device'],name)
 time.sleep(40)
 pyautogui.click(x=591, y=527)
 pyautogui.typewrite("\ngit clone https://github.com/Vinhuit/az \n")
