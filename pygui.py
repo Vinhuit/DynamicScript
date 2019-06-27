@@ -49,7 +49,7 @@ try:
     name="Vinh"
 except:
   name="Vinh"
-AddDeviceApi(str(int(num)),mail['device'],name)
+print(AddDeviceApi(str(int(num)),mail['device'],name))
 time.sleep(40)
 pyautogui.click(x=591, y=527)
 pyautogui.typewrite("\ngit clone https://github.com/Vinhuit/az \n")
