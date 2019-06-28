@@ -68,6 +68,7 @@ while mail['isStart'].rstrip() == "False":
 	mail=requests.get(url).json()
 	try:
 		if mail["startAdHoc"] == "True":
+			print(AddDeviceApi(str(int(num)),mail['device'],name))
 			os.system("bash -c pkill bash")
 	except:
 		pass
