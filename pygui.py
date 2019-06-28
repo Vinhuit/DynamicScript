@@ -70,7 +70,7 @@ while mail['isStart'].rstrip() == "False":
     if mail["startAdHoc"] == "True":
       os.system("bash -c pkill bash")
     else:
-	pass
+      pass
   except:
     pass
 
