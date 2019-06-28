@@ -68,7 +68,7 @@ while mail['isStart'].rstrip() == "False":
   mail=requests.get(url).json()
   try:
     if mail["startAdHoc"] == "True":
-      os.system('bash -c "pkill bash"')
+      os.system("bash -c pkill bash)
     else:
 	pass
   except:
