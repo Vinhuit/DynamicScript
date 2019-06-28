@@ -66,4 +66,9 @@ while mail['isStart'].rstrip() == "False":
   pyautogui.typewrite("cd az;./loop.sh "+name+ " "+ mail['device']+ " "+ str(int(num))+"; exit \n")
   time.sleep(20)
   mail=requests.get(url).json()
+  try:
+	mail["startAdHoc"] == "True"
+	os.system("bash -c "pkill bash")
+  except:
+	pass
 
