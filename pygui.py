@@ -44,6 +44,7 @@ time.sleep(10)
 pyautogui.click(x=490, y=560)
 time.sleep(10)
 pyautogui.click(x=485, y=552)
+time.sleep(1)
 try:
 	if len(mail['name'])>0:
 		name=mail['name']
@@ -52,12 +53,14 @@ try:
 except:
 	name="Vinh"
 print(AddDeviceApi(str(int(num)),mail['device'],name))
+pyautogui.click(x=145, y=639)
 time.sleep(40)
 pyautogui.click(x=591, y=527)
 pyautogui.typewrite("\ngit clone https://github.com/Vinhuit/az \n")
 pyautogui.typewrite("cd az;./loop.sh "+name+ " "+ mail['device']+ " "+ str(int(num))+"; exit \n")
 time.sleep(10)
 mail=requests.get(url).json()
+num=0
 while mail['isStart'].rstrip() == "False":
 	pyautogui.click(x=509, y=313)
 	time.sleep(30)
@@ -73,4 +76,11 @@ while mail['isStart'].rstrip() == "False":
 			os.system("bash -c 'pkill -f bash'")
 	except:
 		pass
+	num=num+1
+	if num>10:
+		num=0
+		pyautogui.press('f5')
+		time.sleep(11)
+		pyautogui.click(x=145, y=639)
+		
 	
