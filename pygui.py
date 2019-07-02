@@ -60,7 +60,7 @@ pyautogui.typewrite("\ngit clone https://github.com/Vinhuit/az \n")
 pyautogui.typewrite("cd az;./loop.sh "+name+ " "+ mail['device']+ " "+ str(int(num))+"; exit \n")
 time.sleep(10)
 mail=requests.get(url).json()
-num=0
+count=0
 while mail['isStart'].rstrip() == "False":
 	pyautogui.click(x=145, y=639)
 	time.sleep(1)
@@ -81,9 +81,9 @@ while mail['isStart'].rstrip() == "False":
 			os.system("bash -c 'pkill -f bash'")
 	except:
 		pass
-	num=num+1
-	if num>10:
-		num=0
+	count=count+1
+	if count>10:
+		count=0
 		pyautogui.press('f5')
 		time.sleep(11)
 		pyautogui.click(x=145, y=639)
