@@ -62,6 +62,11 @@ time.sleep(10)
 mail=requests.get(url).json()
 num=0
 while mail['isStart'].rstrip() == "False":
+	pyautogui.click(x=145, y=639)
+	time.sleep(1)
+	pyautogui.press('home')
+	time.sleep(3)
+	pyautogui.click(x=145, y=639)
 	pyautogui.click(x=509, y=313)
 	time.sleep(30)
 	mail=requests.get(url).json()
