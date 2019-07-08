@@ -6,7 +6,11 @@ def AddDeviceApi(num,email,name):
 	data = json.dumps(data1)
 	print(data)
 	headers = {'content-type': 'application/json'}
-	url = 'http://xjsonserver01.herokuapp.com/temp/'+str(num)
+	if int(num)>499:
+		url="http://xjsonserver01.herokuapp.com/rerunaccount/"+str(num)
+	else:
+		url="http://xjsonserver01.herokuapp.com/temp/"+str(num)
+	#url = 'http://xjsonserver01.herokuapp.com/temp/'+str(num)
 	print(url)
 	response = requests.put(url, data=data,headers=headers)
 	return response
@@ -19,7 +23,10 @@ pyautogui.click(x=427, y=426)
 time.sleep(2)
 num=os.environ['NAME']
 num=num[3:]
-url="http://xjsonserver01.herokuapp.com/temp/"+str(int(num))
+if int(num)>499:
+	url="http://xjsonserver01.herokuapp.com/rerunaccount/"+str(int(num))
+else:
+	url="http://xjsonserver01.herokuapp.com/temp/"+str(int(num))
 mail=requests.get(url).json()
 pyautogui.click(x=419, y=411)
 time.sleep(2)
