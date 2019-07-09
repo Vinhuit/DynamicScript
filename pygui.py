@@ -17,6 +17,8 @@ def AddDeviceApi(num,email,name):
 
 pyautogui.click(x=485, y=472)
 time.sleep(2)
+pyautogui.click(x=136, y=645)
+time.sleep(2)
 pyautogui.click(x=146, y=618)
 time.sleep(2)
 pyautogui.click(x=427, y=426)
