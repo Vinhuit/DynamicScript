@@ -16,7 +16,7 @@ def AddDeviceApi(num,email,name):
 	return response
 
 if int(num)>499:
-	os.system("xdg-open /headless/Desktop/backup/firefox.desktop")
+	os.system("xdg-open /headless/Desktop/backup/firefox2.desktop")
 	time.sleep(10)
 pyautogui.click(x=485, y=472)
 time.sleep(2)
