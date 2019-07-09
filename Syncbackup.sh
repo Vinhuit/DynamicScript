@@ -43,7 +43,7 @@ while true; do
     fi
     echo "Done Backup"
     pkill firefox
-    xdg-open /headless/Desktop/backup/firefox.desktop
+    #xdg-open /headless/Desktop/backup/firefox.desktop
     sleep 8
     ./RunAzure.sh
     sleep $1
