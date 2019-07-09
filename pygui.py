@@ -109,7 +109,7 @@ for i in range(10):
 			pyautogui.press('f5')
 			time.sleep(11)
 			pyautogui.click(x=145, y=639)
-	time.sleep(7300)
+	time.sleep(3700)
 	print(AddDeviceApi(str(int(num)),mail['device'],name))
 		
 	
