@@ -90,9 +90,9 @@ for i in range(10):
 		pyautogui.click(x=493, y=557)
 		time.sleep(1)
 		#profile
-		pyautogui.click(x=741, y=518)
+		pyautogui.click(x=757, y=634)
 		time.sleep(2)
-		pyautogui.click(x=58, y=581)
+		pyautogui.click(x=764, y=694)
 		time.sleep(2)
 		pyautogui.click(x=623, y=569)
 		time.sleep(4)
