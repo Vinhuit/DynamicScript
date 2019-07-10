@@ -99,6 +99,7 @@ for i in range(10):
 		pyautogui.press('end')
 		time.sleep(1)
 		pyautogui.click(x=623, y=569)
+		pyautogui.click(x=610, y=521)
 		time.sleep(4)
 		pyautogui.click(x=488, y=569)
 		time.sleep(1)
