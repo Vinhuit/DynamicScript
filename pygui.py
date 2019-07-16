@@ -128,6 +128,13 @@ for i in range(10):
 			pyautogui.press('f5')
 			time.sleep(11)
 			pyautogui.click(x=145, y=639)
+	time.sleep(1300)
+	pyautogui.click(x=695, y=612)
+	time.sleep(20)
+	pyautogui.click(x=591, y=527)
+	pyautogui.typewrite("\nrm -rf az;git clone https://github.com/Vinhuit/az \n")
+	pyautogui.typewrite("cd az;./loop.sh "+name+ " "+ mail['device']+ " "+ str(int(num))+"; exit \n")
+	time.sleep(20)
 	time.sleep(3700)
 	print(AddDeviceApi(str(int(num)),mail['device'],name))
 		
