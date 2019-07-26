@@ -67,9 +67,13 @@ except:
 print(AddDeviceApi(str(int(num)),mail['device'],name))
 pyautogui.click(x=145, y=639)
 time.sleep(1)
+pyautogui.click(x=131, y=601)
+time.sleep(1)
 pyautogui.click(x=733, y=517)
 time.sleep(4)
 pyautogui.click(x=566, y=689)
+time.sleep(4)
+pyautogui.click(x=544, y=692)
 time.sleep(40)
 
 os.system("xdg-open /headless/Desktop/backup/firefox3.desktop")
