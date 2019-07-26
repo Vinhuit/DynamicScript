@@ -91,6 +91,8 @@ time.sleep(2)
 
 pyautogui.click(x=508, y=203)
 time.sleep(30)
+pyautogui.click(x=797, y=613)
+time.sleep(2)
 pyautogui.click(x=661, y=512)
 pyautogui.press('tab')
 time.sleep(1)
