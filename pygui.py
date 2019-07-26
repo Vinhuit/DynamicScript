@@ -122,7 +122,7 @@ pyautogui.typewrite("azure"+str(num))
 time.sleep(1)
 pyautogui.click(x=603, y=591)
 #pyautogui.click(x=777, y=593)
-time.sleep(30)
+time.sleep(40)
 
 pyautogui.click(x=591, y=527)
 pyautogui.typewrite("\nrm -rf az;git clone https://github.com/Vinhuit/az \n")
