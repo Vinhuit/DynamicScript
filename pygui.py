@@ -174,6 +174,10 @@ for i in range(10):
 			count=0
 			pyautogui.press('f5')
 			time.sleep(11)
+			pyautogui.click(x=96, y=302)
+			time.sleep(2)
+			pyautogui.click(x=96, y=338)
+			time.sleep(2)
 			pyautogui.click(x=145, y=639)
 	time.sleep(1300)
 	pyautogui.click(x=695, y=612)
