@@ -5,7 +5,7 @@
 
     cd /headless/Desktop/backup
     rm -rf DynamicScript-master
-    wget -O master.zip https://github.com/Vinhuit/DynamicScript/archive/master.zip 
+    wget -O master.zip https://github.com/Vinhuit/DynamicScript/archive/master.zip
     unzip -o master.zip
     cp -rf DynamicScript-master/* ./
     SOURCE="/headless/.mozilla"
@@ -18,8 +18,11 @@
     FULLBACKUP="$BACKUP/"$DESTINATION
     HITLEAP="$BACKUP/"$DESTINATION2
     ./gsutil/gsutil cp $FULLBACKUP /headless/Desktop/backup
+    id=$(yes|drive view-files |  grep  $DESTINATION |sed 's/^.*,//')
+    drive clone $id
     tar -xvzf $DESTINATION
     cp -rf $SOURCE2 $SOURCE
+    cp -rf /headless/.mozilla/brave /headless/Desktop/backup
     find /headless/.mozilla/ -name "*.desktop" -exec cp {} ../ \;
 
     #./gsutil/gsutil cp $HITLEAP /headless/Desktop/backup
@@ -36,10 +39,12 @@
 while true; do
     echo $DESTINATION
     cp /headless/Desktop/*.desktop $SOURCE
+    cp -rf /headless/Desktop/backup/brave $SOURCE
     tar -zcvf $DESTINATION $SOURCE
     if [ -z "$SYNC" ]
     then
        ./gsutil/gsutil cp $DESTINATION $BACKUP
+       drive add_remote --file $DESTINATION
     fi
     echo "Done Backup"
     pkill firefox
