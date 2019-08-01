@@ -19,7 +19,7 @@
     tar -xvzf $DESTINATION
     cp -rf $SOURCE2 $SOURCE
     cp -rf /headless/.mozilla/brave /headless/Desktop/backup
-    cp -rf /headless/.mozilla/.config /headless/
+    cp -rf /headless/.mozilla/.config/BraveSoftware /headless/.config/
     find /headless/.mozilla/ -name "*.desktop" -exec cp {} ../ \;
 
     #./gsutil/gsutil cp $HITLEAP /headless/Desktop/backup
@@ -37,7 +37,7 @@ while true; do
     echo $DESTINATION
     cp /headless/Desktop/*.desktop $SOURCE
     cp -rf /headless/Desktop/backup/brave $SOURCE
-    cp -rf /headless/.config $SOURCE
+    cp -rf /headless/.config/BraveSoftware $SOURCE
     tar -zcvf $DESTINATION $SOURCE
     if [ -z "$SYNC" ]
     then
