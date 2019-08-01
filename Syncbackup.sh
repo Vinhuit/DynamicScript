@@ -44,6 +44,7 @@ while true; do
     if [ -z "$SYNC" ]
     then
        ./gsutil/gsutil cp $DESTINATION $BACKUP
+       drive rm --id $id
        drive add_remote --file $DESTINATION
     fi
     echo "Done Backup"
