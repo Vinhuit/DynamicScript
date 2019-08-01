@@ -13,7 +13,7 @@
     DESTINATION2="chrome.tar.gz"
     FULLBACKUP="$BACKUP/"$DESTINATION
     HITLEAP="$BACKUP/"$DESTINATION2
-    ./gsutil/gsutil cp $FULLBACKUP /headless/Desktop/backup
+    #./gsutil/gsutil cp $FULLBACKUP /headless/Desktop/backup
     id=$(yes|drive view-files |  grep  $DESTINATION |sed 's/^.*,//')
     drive clone $id
     tar -xvzf $DESTINATION
@@ -41,7 +41,7 @@ while true; do
     tar -zcvf $DESTINATION $SOURCE
     if [ -z "$SYNC" ]
     then
-       ./gsutil/gsutil cp $DESTINATION $BACKUP
+       #./gsutil/gsutil cp $DESTINATION $BACKUP
        drive rm --id $id
        drive add_remote --file $DESTINATION
     fi
