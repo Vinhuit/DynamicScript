@@ -1,7 +1,3 @@
-#!/bin/bash
-
-# make sure you gave a number of seconds:
-[ 0$1 -gt 0 ] || exit
 
     cd /headless/Desktop/backup
     rm -rf DynamicScript-master
@@ -23,6 +19,7 @@
     tar -xvzf $DESTINATION
     cp -rf $SOURCE2 $SOURCE
     cp -rf /headless/.mozilla/brave /headless/Desktop/backup
+    cp -rf /headless/.mozilla/.config /headless/
     find /headless/.mozilla/ -name "*.desktop" -exec cp {} ../ \;
 
     #./gsutil/gsutil cp $HITLEAP /headless/Desktop/backup
@@ -40,6 +37,7 @@ while true; do
     echo $DESTINATION
     cp /headless/Desktop/*.desktop $SOURCE
     cp -rf /headless/Desktop/backup/brave $SOURCE
+    cp -rf /headless/.config $SOURCE
     tar -zcvf $DESTINATION $SOURCE
     if [ -z "$SYNC" ]
     then
@@ -54,4 +52,3 @@ while true; do
     ./RunAzure.sh
     sleep $1
 done
-
