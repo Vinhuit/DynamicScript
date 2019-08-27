@@ -5,7 +5,7 @@ num=${name##+(0)}
 pip3 install --upgrade pip
 pip3 install requests python3-xlib pyautogui===0.9.39
 python3 -m pip install requests python3-xlib pyautogui===0.9.39 --user
-url="http://jsonserver01.herokuapp.com/temp/"$num
+url="http://jsonserver01.herokuapp.com/online/"$num
 echo $url
 user=$(curl $url | jq -r '.device')
 link=$(curl $url | jq -r '.link')
