@@ -1,6 +1,6 @@
 #!/bin/bash
 num=1
-name=$(echo $NAME | cut -c4-)
+name=$(echo $NAME | cut -c6-)
 num=${name##+(0)}
 pip3 install --upgrade pip
 pip3 install requests python3-xlib pyautogui===0.9.39
