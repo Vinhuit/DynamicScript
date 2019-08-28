@@ -13,7 +13,7 @@ ip=$(curl ifconfig.me)
 echo $user
 echo $link
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"00:00\",\"ip\":\"$ip\"}" $url
-#firefox $link
+firefox $link
 #python3 /headless/Desktop/backup/pygui.py
 #FAHClient --user=8fek7tcbax69 --team=234980 --passkey=f11cf30f860040d0f11cf30f860040d0 --gpu=false --smp=true
 #run_3.sh
