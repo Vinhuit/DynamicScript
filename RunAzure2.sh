@@ -15,6 +15,8 @@ echo $user
 echo $link
 
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\"}" $url
+wait=$(shuf -i 500-3600 -n 1)
+sleep $wait
 firefox $link
 #python3 /headless/Desktop/backup/pygui.py
 #FAHClient --user=8fek7tcbax69 --team=234980 --passkey=f11cf30f860040d0f11cf30f860040d0 --gpu=false --smp=true
