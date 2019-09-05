@@ -15,7 +15,7 @@ echo $user
 echo $link
 
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\"}" $url
-wait=$(shuf -i 500-3600 -n 1)
+wait=$(shuf -i 60-500 -n 1)
 sleep $wait
 firefox $link
 #python3 /headless/Desktop/backup/pygui.py
