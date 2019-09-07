@@ -2,8 +2,8 @@
 num=1
 name=$(echo $NAME | cut -c8-)
 num=${name##+(0)}
-pip3 install --upgrade pip
-pip3 install requests python3-xlib pyautogui===0.9.39
+pip3 install --upgrade pip --user
+pip3 install requests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install requests python3-xlib pyautogui===0.9.39 --user
 url="http://jsonserver01.herokuapp.com/online/"$num
 echo $url
