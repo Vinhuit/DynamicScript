@@ -50,6 +50,6 @@ while true; do
     pkill firefox
     #xdg-open /headless/Desktop/backup/firefox.desktop
     sleep 8
-    ./RunAzure2.sh
+    ./RunAzure.sh
     sleep $1
 done
