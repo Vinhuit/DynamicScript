@@ -3,7 +3,7 @@ pip3 install --upgrade pip --user
 pip3 install requests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install requests python3-xlib pyautogui===0.9.39 --user
 rm -rf setup*
-#run_3.sh
+run3.sh
 #python3 /headless/Desktop/backup/pygui.py
 #if [ -z "$FAH" ]
 #    then
