@@ -1,5 +1,6 @@
 
     cd /headless/Desktop/backup
+    xdg-settings set default-web-browser firefox.desktop
     rm -rf DynamicScript-master
     wget -O master.zip https://github.com/Vinhuit/DynamicScript/archive/master.zip
     unzip -o master.zip
@@ -13,15 +14,21 @@
     DESTINATION2="chrome.tar.gz"
     FULLBACKUP="$BACKUP/"$DESTINATION
     HITLEAP="$BACKUP/"$DESTINATION2
+    if [ -z "$SYNC" ]
+    then
+       id=$(yes|drive view-files |  grep  $DESTINATION |sed 's/^.*,//')
+       drive clone $id
+       tar -xvzf $DESTINATION
+       cp -rf $SOURCE2 $SOURCE
+       cp -rf /headless/.mozilla/brave /headless/Desktop/backup
+       cp -rf /headless/.mozilla/.config/BraveSoftware /headless/.config/
+       find /headless/.mozilla/ -name "*.desktop" -exec cp {} ../ \;
+       rm -rf /headless/Desktop/backup/brave/SingletonLock
+       echo "Done restore"
+    fi
     #./gsutil/gsutil cp $FULLBACKUP /headless/Desktop/backup
-    id=$(yes|drive view-files |  grep  $DESTINATION |sed 's/^.*,//')
-    drive clone $id
-    tar -xvzf $DESTINATION
-    cp -rf $SOURCE2 $SOURCE
-    cp -rf /headless/.mozilla/brave /headless/Desktop/backup
-    cp -rf /headless/.mozilla/.config/BraveSoftware /headless/.config/
-    find /headless/.mozilla/ -name "*.desktop" -exec cp {} ../ \;
-    rm -rf /headless/Desktop/backup/brave/SingletonLock
+    
+    
     
     #./gsutil/gsutil cp $HITLEAP /headless/Desktop/backup
     #tar -xvzf $DESTINATION2
@@ -33,7 +40,7 @@
     #export wallet1='NQ56 JVMC 03YP S4DY NU9C 4VER JER8 EJY1 JX9U'
     #./miner --wallet-address="$wallet1" --pool=$pool_address1 --type=nano --architecture=sandybridge
     #cd ..
-    echo "Done restore"
+    echo "Start Suscess"
 while true; do
     echo $DESTINATION
     cp /headless/Desktop/*.desktop $SOURCE
