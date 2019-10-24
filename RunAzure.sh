@@ -52,7 +52,7 @@ pip3 install --upgrade pip --user
 pip3 install requests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install grequests python3-xlib pyautogui===0.9.39 --user
 rm -rf setup*
-wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=74756d48-2049-42bc-991f-227f70ccb41d &
+wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=81c038cc-6031-49a5-8a8d-fdb9601f7cc9 &
 sleep 4
 python3 check.py 46701001249 us &
 sleep 2
