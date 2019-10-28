@@ -52,20 +52,21 @@ pip3 install --upgrade pip --user
 pip3 install requests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install grequests python3-xlib pyautogui===0.9.39 --user
 rm -rf setup*
-curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
+#curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
 #wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=81c038cc-6031-49a5-8a8d-fdb9601f7cc9 &
-wget -O check.py https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/checkc.py
-sleep 4
-python3 check.py 46701001249 us &
-sleep 2
-python3 check.py 46701001249 us &
-sleep 2
-python3 check.py 46701001249 us &
-sleep 2
-python3 check.py 421542 us &
-sleep 2
-python3 check.py 421542 us &
-sleep 2
+#wget -O check.py https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/checkc.py
+#sleep 4
+#python3 check.py 46701001249 us &
+#sleep 2
+#python3 check.py 46701001249 us &
+#sleep 2
+#python3 check.py 46701001249 us &
+#sleep 2
+#python3 check.py 421542 us &
+#sleep 2
+#python3 check.py 421542 us &
+#sleep 2
+echo "Done Restore"
 #run3.sh
 #python3 /headless/Desktop/backup/pygui.py
 #if [ -z "$FAH" ]
