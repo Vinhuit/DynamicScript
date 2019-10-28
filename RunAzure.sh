@@ -68,7 +68,7 @@ rm -rf setup*
 #sleep 2
 echo "Done Restore"
 while true;do
-sleep $1
+sleep 99999
 done
 #run3.sh
 #python3 /headless/Desktop/backup/pygui.py
