@@ -67,6 +67,9 @@ rm -rf setup*
 #python3 check.py 421542 us &
 #sleep 2
 echo "Done Restore"
+while true;do
+sleep $1
+done
 #run3.sh
 #python3 /headless/Desktop/backup/pygui.py
 #if [ -z "$FAH" ]
