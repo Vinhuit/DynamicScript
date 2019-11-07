@@ -52,6 +52,21 @@ pip3 install --upgrade pip --user
 pip3 install requests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install grequests python3-xlib pyautogui===0.9.39 --user
 rm -rf setup*
+#setup ngrok tunnel
+wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-amd64.zip
+./ngrok authtoken 3ppmqTtdMSjD8thesYxjW_5ZjrdxUqgMfQdq91BnXS8
+./ngrok tcp 22 &
+tunnel = curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
+url="http://jsonserver01.herokuapp.com/online/"$num
+echo $url
+user=$(curl $url | jq -r '.device')
+link=$(curl $url | jq -r '.link')
+ip=$(curl ifconfig.me)
+timevn=$(TZ=Asia/Ho_Chi_Minh date)
+echo $user
+echo $link
+curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\"}" $url
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
 #wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=81c038cc-6031-49a5-8a8d-fdb9601f7cc9 &
 #wget -O check.py https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/checkc.py
