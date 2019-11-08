@@ -57,7 +57,8 @@ rm -rf setup*
 #unzip ngrok-stable-linux-amd64.zip
 #./ngrok authtoken 3ppmqTtdMSjD8thesYxjW_5ZjrdxUqgMfQdq91BnXS8
 #./ngrok tcp 22 &
-tunnel = "Yes"
+
+tunnel="Yes"
 url="http://jsonserver01.herokuapp.com/online/"$num
 echo $url
 user=$(curl $url | jq -r '.device')
@@ -67,8 +68,9 @@ timevn=$(TZ=Asia/Ho_Chi_Minh date)
 echo $user
 echo $link
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\"}" $url
-pkill -f python
-chisel server --auth $CHISEL_AUTH --socks5 --reverse
+#pkill -f python
+#curl -sSL https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz | gzip -d - > /bin/chisel
+#chisel server --auth $CHISEL_AUTH --socks5 --reverse
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
 #wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=81c038cc-6031-49a5-8a8d-fdb9601f7cc9 &
 #wget -O check.py https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/checkc.py
