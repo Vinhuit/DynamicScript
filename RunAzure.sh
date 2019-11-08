@@ -72,7 +72,7 @@ echo $link
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\"}" $url
 if [ $tunnel == "yes" ]
 then
-    pkill python
+    pkill -f python
     curl -sSL https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz | gzip -d - > /bin/chisel
     chmod +x /bin/chisel
     chisel server --port $PORT --auth $CHISEL_AUTH --socks5 --reverse &
