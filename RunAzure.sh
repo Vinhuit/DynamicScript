@@ -74,6 +74,7 @@ if [ $tunnel == "yes" ]
 then
     pkill python
     curl -sSL https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz | gzip -d - > /bin/chisel
+    chmod +x /bin/chisel
     chisel server --port $PORT --auth $CHISEL_AUTH --socks5 --reverse &
     echo "Done Start Proxy Server"
 fi
