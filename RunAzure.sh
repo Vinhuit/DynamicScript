@@ -57,7 +57,9 @@ rm -rf setup*
 #unzip ngrok-stable-linux-amd64.zip
 #./ngrok authtoken 3ppmqTtdMSjD8thesYxjW_5ZjrdxUqgMfQdq91BnXS8
 #./ngrok tcp 22 &
-
+num=1
+name=$(echo $NAME | cut -c8-)
+num=${name##+(0)}
 tunnel="Yes"
 url="http://jsonserver01.herokuapp.com/online/"$num
 echo $url
