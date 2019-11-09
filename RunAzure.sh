@@ -75,7 +75,7 @@ then
     pkill -f python
     curl -sSL https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz | gzip -d - > /bin/chisel
     chmod +x /bin/chisel
-    chisel server --port $PORT --auth rhino:rhino--socks5 --reverse &
+    chisel server --port $PORT --auth rhino:rhino --socks5 --reverse &
     echo "Done Start Proxy Server"
 fi
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
