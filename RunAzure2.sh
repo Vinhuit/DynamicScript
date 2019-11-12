@@ -18,6 +18,7 @@ echo $link
 
 #curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
 wait=$(shuf -i 60-500 -n 1)
+echo "wait $wait minute to start browser"
 sleep $wait
 firefox $link &
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
