@@ -66,7 +66,8 @@ tunnel=$(curl $url | jq -r '.tunnel')
 user=$(curl $url | jq -r '.device')
 link=$(curl $url | jq -r '.link')
 service=$(curl $url | jq -r '.service')
-ip=$(curl ifconfig.me)
+ip=$(curl $url | jq -r '.ip')
+ip+="|"$(curl ifconfig.me)
 timevn=$(TZ=Asia/Ho_Chi_Minh date)
 echo $user
 echo $link
