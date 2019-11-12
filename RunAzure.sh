@@ -65,11 +65,13 @@ echo $url
 tunnel=$(curl $url | jq -r '.tunnel')
 user=$(curl $url | jq -r '.device')
 link=$(curl $url | jq -r '.link')
+service=$(curl $url | jq -r '.service')
 ip=$(curl ifconfig.me)
 timevn=$(TZ=Asia/Ho_Chi_Minh date)
 echo $user
 echo $link
-curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\"}" $url
+echo $service
+curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
 if [ $tunnel == "yes" ]
 then
     pkill -f python
