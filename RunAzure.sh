@@ -88,6 +88,7 @@ then
 elif [ $service == "cpm" ]
 then
     chromium-browser --incognito $link &
+    sleep 10
     python3 cpmclick.py
 fi
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
