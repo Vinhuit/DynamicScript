@@ -1,4 +1,5 @@
 #!/bin/bash
+
 SOURCE="/headless/.mozilla"
 SOURCE2="headless/.mozilla/."
     #BACKUP="gs://decisive-circle-176914.appspot.com/data/"
@@ -47,7 +48,9 @@ SOURCE2="headless/.mozilla/."
        drive add_remote --file $DESTINATION
     fi
     echo "Done Backup"
-  
+
+wget 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=vi' -O firefox.tar.bz
+tar xvf firefox.tar.bz
 pip3 install --upgrade pip --user
 pip3 install requests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install grequests python3-xlib pyautogui===0.9.39 --user
@@ -87,7 +90,7 @@ then
     ./RunAzure2.sh
 elif [ $service == "cpm" ]
 then
-    chromium-browser --incognito $link &
+    google-chrome-stable --incognito $link &
     sleep 10
     python3 cpmclick.py
 fi
