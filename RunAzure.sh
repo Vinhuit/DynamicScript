@@ -90,11 +90,10 @@ then
     ./RunAzure2.sh
 elif [ $service == "cpm" ]
 then
-    google-chrome-stable --incognito $link &
+    google-chrome --incognito $link &
     sleep 10
     python3 cpmclick.py
 else
-then
     google-chrome-stable --incognito $link &
     sleep 10
     python3 cpmclick.py
