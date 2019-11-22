@@ -94,7 +94,7 @@ then
     sleep 10
     python3 cpmclick.py
 else
-    google-chrome-stable --incognito $link &
+    google-chrome --incognito $link &
     sleep 10
     python3 cpmclick.py
 fi
