@@ -96,6 +96,8 @@ then
     sleep 10
     python3 cpmclick.py
 else
+    google-chrome --incognito "ssh.cloud.google.com" &
+    python3 consolegg.py
     google-chrome --incognito $link &
     sleep 10
     python3 cpmclick.py
