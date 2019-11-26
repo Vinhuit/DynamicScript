@@ -16,7 +16,7 @@ def AddDeviceApi(num,email,name):
 	return response
   
 num=os.environ['NAME']
-num=num[3:]
+num=num[6:]
 
 url="http://xjsonserver01.herokuapp.com/temp/"+str(int(num))
 mail=requests.get(url).json()
