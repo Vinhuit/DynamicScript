@@ -19,6 +19,6 @@ wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_
 tar xvzf ssh.tar.gz
 gcloud config set project $xproject
 gcloud services enable cloudshell.googleapis.com
+echo $(curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail \",\"isStart\":\"True\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url)
 gcloud alpha cloud-shell ssh
 
-echo $(curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail \",\"isStart\":\"True\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url)
