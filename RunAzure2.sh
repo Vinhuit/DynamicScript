@@ -23,8 +23,11 @@ echo $link
 wait=$(shuf -i 60-500 -n 1)
 echo "wait $wait minute to start browser"
 sleep $wait
-ssh -i ".ssh/google_compute_engine" minh$num@$ipwan -D 3000 -p 6000 -o StrictHostKeyChecking=no
-google-chrome --proxy-server=socks://127.0.0.1:3000 --proxy-bypass-list='<-loopback>' --private-window $link
+wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/ssh.tar.gz
+tar xvzf ssh.tar.gz
+ssh -o StrictHostKeyChecking=no -f -C -q -N -i ".ssh/google_compute_engine" minh$num@$ipwan -D 3000 -p 6000
+google-chrome --proxy-server=socks://127.0.0.1:3000 --proxy-bypass-list='<-loopback>' --private-window $link &
+
 #chromium-browser --private-window $link &
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
 #wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=81c038cc-6031-49a5-8a8d-fdb9601f7cc9 &
