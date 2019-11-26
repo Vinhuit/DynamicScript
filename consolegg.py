@@ -21,7 +21,7 @@ num=num[7:]
 url="http://jsonserver01.herokuapp.com/temp/"+str(int(num))
 mail=requests.get(url).json()
 
-
+time.sleep(4)
 pyautogui.click(x=505, y=595)
 pyautogui.typewrite(mail['mail'])
 time.sleep(2)
