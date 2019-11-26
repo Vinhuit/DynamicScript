@@ -1,5 +1,5 @@
 import pyautogui
-import os ,time
+import os ,time, sys
 
 def AddDeviceApi(num,email,name):
 	data1= {"device": email.rstrip(),"name":name,"isStart":"False"}
@@ -36,4 +36,4 @@ time.sleep(1)
 pyautogui.click(x=339, y=741)
 time.sleep(10)
 pyautogui.click(x=316, y=976)
-pyautogui.typewrite('wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/googlessh.sh \n')
+pyautogui.typewrite('wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/googlessh.sh {0}\n'.format(sys.argv[1]))
