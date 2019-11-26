@@ -90,6 +90,9 @@ then
     ./RunAzure2.sh
 elif [ $service == "cpm" ]
 then
+    google-chrome --incognito "ssh.cloud.google.com"
+    sleep 3
+    pkill -f google-chrome
     google-chrome --incognito "ssh.cloud.google.com" &
     python3 consolegg.py $num
     #google-chrome --incognito $link &
