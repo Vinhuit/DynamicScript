@@ -23,6 +23,7 @@ mail=requests.get(url).json()
 
 time.sleep(4)
 pyautogui.click(x=505, y=595)
+pyautogui.click(x=558, y=564)
 pyautogui.typewrite(mail['mail'])
 time.sleep(2)
 pyautogui.press('enter')
