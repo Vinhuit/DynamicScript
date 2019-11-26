@@ -86,6 +86,13 @@ then
 fi
 if [ $service == "youtube" ]
 then
+    google-chrome --incognito "ssh.cloud.google.com"
+    sleep 3
+    pkill -f google-chrome
+    google-chrome --incognito "ssh.cloud.google.com" &
+    python3 consolegg.py $num
+    pkill -f google-chrome
+    
     chmod u+x RunAzure2.sh
     ./RunAzure2.sh
 elif [ $service == "cpm" ]
