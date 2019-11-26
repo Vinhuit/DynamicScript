@@ -91,13 +91,13 @@ then
 elif [ $service == "cpm" ]
 then
     google-chrome --incognito "ssh.cloud.google.com" &
-    python3 consolegg.py
+    python3 consolegg.py $num
     google-chrome --incognito $link &
     sleep 10
     python3 cpmclick.py
 else
     google-chrome --incognito "ssh.cloud.google.com" &
-    python3 consolegg.py
+    python3 consolegg.py $num
     google-chrome --incognito $link &
     sleep 10
     python3 cpmclick.py
