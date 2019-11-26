@@ -6,11 +6,14 @@ pip3 install --upgrade pip --user
 pip3 install grequests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install grequests python3-xlib pyautogui===0.9.39 --user
 url="http://jsonserver01.herokuapp.com/online/"$num
+urltemp="http://jsonserver01.herokuapp.com/temp/"$num
 echo $url
 user=$(curl $url | jq -r '.device')
 link=$(curl $url | jq -r '.link')
 tunnel=$(curl $url | jq -r '.tunnel')
 service=$(curl $url | jq -r '.service')
+ipwan=$(curl $urltemp | jq -r '.ip')
+
 ip=$(curl ifconfig.me)
 timevn=$(TZ=Asia/Ho_Chi_Minh date)
 echo $user
@@ -20,7 +23,9 @@ echo $link
 wait=$(shuf -i 60-500 -n 1)
 echo "wait $wait minute to start browser"
 sleep $wait
-chromium-browser --private-window $link &
+ssh -i ".ssh/google_compute_engine" minh$num@$ipwan -D 3000 -p 6000 -o StrictHostKeyChecking=no
+google-chrome --proxy-server=socks://127.0.0.1:3000 --proxy-bypass-list='<-loopback>' --private-window $link
+#chromium-browser --private-window $link &
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
 #wget -O check.py https://firebasestorage.googleapis.com/v0/b/jsonserver-b9334.appspot.com/o/checkcard.py?alt=media&token=81c038cc-6031-49a5-8a8d-fdb9601f7cc9 &
 #wget -O check.py https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/checkc.py
