@@ -56,6 +56,17 @@ pyautogui.press('tab')
 time.sleep(1)
 pyautogui.press('enter')
 time.sleep(20)
-pyautogui.click(x=316, y=976)
+#restart cloud shell
+pyautogui.click(x=1252, y=151)
+time.sleep(2)
+pyautogui.click(x=1252, y=151)
+time.sleep(2)
+pyautogui.click(x=1099, y=151)
+time.sleep(2)
+pyautogui.click(x=315, y=739)
+time.sleep(90)
+#
+#click paste
+pyautogui.click(x=316, y=194)
 time.sleep(2)
 pyautogui.typewrite('\n rm -rf * \n wget https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/googlessh.sh;chmod 777 googlessh.sh; ./googlessh.sh {0}\n'.format(num))
