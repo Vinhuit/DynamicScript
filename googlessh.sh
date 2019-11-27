@@ -7,7 +7,7 @@ ip=$(curl $url | jq -r '.ip')
 ispresent=$(gcloud projects list | grep xproject)
 if [ -z "$ispresent" ]
 then
-	xproject=project$RANDOM
+	xproject=xproject$RANDOM
 	gcloud projects create $xproject
 fi
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail \",\"isStart\":\"False\",\"project\":\"$xproject\",\"ip\":\"$ip\"}" $url
