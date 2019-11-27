@@ -55,6 +55,7 @@ time.sleep(1)
 pyautogui.press('tab')
 time.sleep(1)
 pyautogui.press('enter')
+print("wait restart")
 time.sleep(20)
 #restart cloud shell
 pyautogui.click(x=1252, y=151)
@@ -64,6 +65,7 @@ time.sleep(2)
 pyautogui.click(x=1099, y=151)
 time.sleep(2)
 pyautogui.click(x=315, y=739)
+print("wait new ip")
 time.sleep(90)
 #
 #click paste
