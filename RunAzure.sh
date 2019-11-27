@@ -86,7 +86,7 @@ then
 fi
 if [ $service == "youtube" ]
 then
-    chromium-browser --incognito "ssh.cloud.google.com"
+    chromium-browser --incognito "ssh.cloud.google.com" &
     sleep 3
     pkill -f chromium-browser
     chromium-browser --incognito "ssh.cloud.google.com" &
@@ -97,7 +97,7 @@ then
     ./RunAzure2.sh
 elif [ $service == "cpm" ]
 then
-    chromium-browser --incognito "ssh.cloud.google.com"
+    chromium-browser --incognito "ssh.cloud.google.com" &
     sleep 3
     pkill -f chromium-browser
     chromium-browser --incognito "ssh.cloud.google.com" &
