@@ -10,7 +10,7 @@ then
 	xproject=project$RANDOM
 	gcloud projects create $xproject
 fi
-curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail \",\"isStart\":\"False\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url
+curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail\",\"isStart\":\"False\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url
 
 docker run -d -e NAME=xgoogle1 -p 6902:6902 -p 8888:22 -p 8080:8080 -e PORT=6902 -e SYNC=true --user 0 caubequay00/ubuntu-novnc-chisel
 
@@ -22,6 +22,6 @@ wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_
 tar xvzf ssh.tar.gz
 gcloud config set project $xproject
 gcloud services enable cloudshell.googleapis.com
-echo $(curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail \",\"isStart\":\"True\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url)
+echo $(curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail\",\"isStart\":\"True\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url)
 gcloud alpha cloud-shell ssh
 
