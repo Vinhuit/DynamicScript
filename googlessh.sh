@@ -10,13 +10,14 @@ then
 	xproject=project$RANDOM
 	gcloud projects create $xproject
 fi
+service=xgoogle$1
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail\",\"isStart\":\"False\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url
 
-docker run -d -e NAME=xgoogle1 -p 6902:6902 -p 8888:22 -p 8080:8080 -e PORT=6902 -e SYNC=true --user 0 caubequay00/ubuntu-novnc-chisel
+docker run -d -e NAME=$service -p 6902:6902 -p 8888:22 -p 8080:8080 -e PORT=6902 -e SYNC=true --user 0 caubequay00/ubuntu-novnc-chisel
 
 sleep 300
 
-docker run -d -e NAME=xgoogle1 -p 6903:6902 -e PORT=6902 -e SYNC=true --user 0 caubequay00/ubuntu-novnc-chisel
+docker run -d -e NAME=$service -p 6903:6902 -e PORT=6902 -e SYNC=true --user 0 caubequay00/ubuntu-novnc-chisel
 
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/ssh.tar.gz
 tar xvzf ssh.tar.gz
