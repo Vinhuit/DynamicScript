@@ -105,6 +105,10 @@ then
     #google-chrome --incognito $link &
     #sleep 10
     #python3 cpmclick.py
+elif [ $service == "4k" ]
+then
+    google-chrome --incognito $link &
+    sleep 20
 else
     #google-chrome --incognito "ssh.cloud.google.com" &
     #python3 consolegg.py $num
