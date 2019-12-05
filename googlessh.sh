@@ -5,9 +5,9 @@ isStart=$(curl $url | jq -r '.isStart')
 xproject=$(curl $url | jq -r '.project')
 ip=$(curl $url | jq -r '.ip')
 ispresent=$(gcloud projects list | grep project)
-url2="http://jsonserver01.herokuapp.com/online/"$1
-service=$(curl $url2 | jq -r '.service')
-echo $service
+#url2="http://jsonserver01.herokuapp.com/online/"$1
+#service=$(curl $url2 | jq -r '.service')
+#echo $service
 if [ -z "$ispresent" ]
 then
 	xproject=project$RANDOM
