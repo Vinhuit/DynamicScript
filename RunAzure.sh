@@ -91,7 +91,7 @@ then
     pkill -f chromium-browser
     google-chrome --incognito "ssh.cloud.google.com" &
     python3 consolegg.py $num
-    pkill -f chromium-browser
+    #pkill -f chromium-browser
     
     chmod u+x RunAzure2.sh
     ./RunAzure2.sh
