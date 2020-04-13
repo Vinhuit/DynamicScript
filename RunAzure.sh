@@ -87,10 +87,10 @@ then
 fi
 if [ $service == "youtube" ]
 then
-    google-chrome-stable --no-sandbox --incognito "ssh.cloud.google.com" &
+    chromium-browser --incognito "ssh.cloud.google.com" &
     sleep 3
     pkill -f chromium-browser google-chrome-stable
-    google-chrome-stable --no-sandbox --incognito "ssh.cloud.google.com" &
+    chromium-browser --incognito "ssh.cloud.google.com" &
     python3 consolegg.py $server
     #pkill -f chromium-browser
     
