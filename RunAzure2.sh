@@ -5,8 +5,8 @@ num=${name##+(0)}
 pip3 install --upgrade pip --user
 pip3 install grequests python3-xlib pyautogui===0.9.39 --user
 python3 -m pip install grequests python3-xlib pyautogui===0.9.39 --user
-url="http://jsonserver01.herokuapp.com/online/"$num
-urltemp="http://jsonserver01.herokuapp.com/temp/"$num
+url="http://jsonserver03.herokuapp.com/online/"$num
+urltemp="http://jsonserver03.herokuapp.com/temp/"$num
 echo $url
 user=$(curl $url | jq -r '.device')
 link=$(curl $url | jq -r '.link')
