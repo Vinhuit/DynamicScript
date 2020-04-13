@@ -63,6 +63,7 @@ rm -rf setup*
 num=1
 name=$(echo $NAME | cut -c8-)
 num=${name##+(0)}
+server = "http://jsonserver03.herokuapp.com"
 url="http://jsonserver03.herokuapp.com/online/"$num
 echo $url
 tunnel=$(curl $url | jq -r '.tunnel')
@@ -90,10 +91,10 @@ then
     sleep 3
     pkill -f chromium-browser
     google-chrome --incognito "ssh.cloud.google.com" &
-    python3 consolegg.py $num
+    python3 consolegg.py $num $server
     #pkill -f chromium-browser
     
-    chmod u+x RunAzure2.sh
+    chmod u+x RunAzure2.sh $server
     ./RunAzure2.sh
 elif [ $service == "cpm" ]
 then
