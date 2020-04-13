@@ -63,7 +63,7 @@ rm -rf setup*
 num=1
 name=$(echo $NAME | cut -c8-)
 num=${name##+(0)}
-server = "http://jsonserver03.herokuapp.com"
+server="http://jsonserver03.herokuapp.com"
 url="http://jsonserver03.herokuapp.com/online/"$num
 echo $url
 tunnel=$(curl $url | jq -r '.tunnel')
