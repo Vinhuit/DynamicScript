@@ -72,9 +72,9 @@ service=$(curl $url | jq -r '.service')
 ip=$(curl $url | jq -r '.ip')
 ip=$(curl ifconfig.me)
 timevn=$(TZ=Asia/Ho_Chi_Minh date)
-echo $user
-echo $link
-echo $service
+echo "User: "$user
+echo "Link: "$link
+echo "Service: "$service
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
 if [ $tunnel == "yes" ]
 then
