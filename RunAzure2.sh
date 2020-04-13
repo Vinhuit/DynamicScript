@@ -26,7 +26,7 @@ sleep $wait
 wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/ssh.tar.gz
 tar xvzf ssh.tar.gz
 ssh -o StrictHostKeyChecking=no -f -C -q -N -i ".ssh/google_compute_engine" minh$num@$ipwan -D 3000 -p 6000
-google-chrome --proxy-server=socks://127.0.0.1:3000 --proxy-bypass-list='<-loopback>' --private-window $link &
+google-chrome-stable --no-sandbox --proxy-server=socks://127.0.0.1:3000 --proxy-bypass-list='<-loopback>' --private-window $link &
 
 #chromium-browser --private-window $link &
 #curl -k -H 'Authorization: token ace112b8ef6a5e936f72c334aebd7f6bb2077061' -H 'Accept: application/vnd.github.v3.raw' -o check.py https://raw.githubusercontent.com/Vinhuit/GetMyToken/master/checkc.py
