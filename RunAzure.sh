@@ -77,8 +77,8 @@ echo "User: "$user
 echo "Link: "$link
 echo "Service: "$service
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
-if [ $tunnel == "yes" ]
 google-chrome-stable --no-sandbox &
+if [ $tunnel == "yes" ]
 then
     pkill -f python
     curl -sSL https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz | gzip -d - > /bin/chisel
