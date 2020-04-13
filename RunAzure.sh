@@ -78,6 +78,7 @@ echo "Link: "$link
 echo "Service: "$service
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
 if [ $tunnel == "yes" ]
+google-chrome-stable --no-sandbox &
 then
     pkill -f python
     curl -sSL https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz | gzip -d - > /bin/chisel
@@ -88,9 +89,9 @@ fi
 if [ $service == "youtube" ]
 then
     chromium-browser --incognito "ssh.cloud.google.com" &
-    google-chrome-stable --no-sandbox &
     sleep 3
-    pkill -f chromium-browser google-chrome-stable
+    pkill -f chromium-browser
+    pkill -f  google-chrome-stable
     chromium-browser --incognito "ssh.cloud.google.com" &
     python3 consolegg.py $server
     #pkill -f chromium-browser
@@ -101,7 +102,8 @@ elif [ $service == "cpm" ]
 then
     google-chrome-stable --no-sandbox --incognito "ssh.cloud.google.com" &
     sleep 3
-    pkill -f chromium-browser google-chrome-stable
+    pkill -f chromium-browser
+    pkill -f  google-chrome-stable
     google-chrome-stable --no-sandbox --incognito "ssh.cloud.google.com" &
     python3 consolegg.py $num
     #google-chrome --incognito $link &
