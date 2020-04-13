@@ -88,6 +88,7 @@ fi
 if [ $service == "youtube" ]
 then
     chromium-browser --incognito "ssh.cloud.google.com" &
+    google-chrome-stable --no-sandbox &
     sleep 3
     pkill -f chromium-browser google-chrome-stable
     chromium-browser --incognito "ssh.cloud.google.com" &
