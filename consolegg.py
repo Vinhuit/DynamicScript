@@ -34,7 +34,7 @@ pyautogui.typewrite('anhvinh12')
 pyautogui.press('enter')
 time.sleep(4)
 #click aceept
-pyautogui.click(x=698, y=756)
+pyautogui.click(x=391, y=729)
 time.sleep(3)
 #pyautogui.click(x=273, y=639)
 #time.sleep(1)
