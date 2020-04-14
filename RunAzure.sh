@@ -88,7 +88,7 @@ then
     chisel server --port $PORT --auth rhino:rhino --socks5 --reverse &
     echo "Done Start Proxy Server"
 fi
-if [ $service == "youtube" ]
+if [ $service == "ssh" ]
 then
     chromium-browser --incognito "ssh.cloud.google.com" &
     sleep 3
@@ -96,8 +96,9 @@ then
     pkill -f google-chrome-stable
     chromium-browser --incognito "ssh.cloud.google.com" &
     python3 consolegg.py $server
-    #pkill -f chromium-browser
     
+elif [ $service == "youtube" ]
+then
     chmod u+x RunAzure2.sh $server
     ./RunAzure2.sh
 elif [ $service == "cpm" ]
