@@ -17,7 +17,7 @@ curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "C
 
 if [ $service == "youtube" ]
 then
-    docker run -d -e NAME=xgoogle2 -p 6903:6902 -e PORT=6902 -e SYNC=true --user 0 caubequay00/ubuntu-novnc-chisel
+    docker run -d -e NAME=xgoogle2 -p 6903:6902 -e PORT=6902 -e SYNC=true --user 0 caubequay00/novnc-wine
 elif [ $service == "cpm" ]
 then
     docker run -d -e NAME=xgoogle1 -p 6902:6902 -p 8888:22 -p 8080:8080 -e PORT=6902 -e SYNC=true --user 0 caubequay00/ubuntu-novnc-chisel
