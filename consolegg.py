@@ -84,4 +84,4 @@ time.sleep(90)
 #click paste
 pyautogui.click(x=316, y=895)
 time.sleep(2)
-pyautogui.typewrite('\n rm -rf * \n wget https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/googlessh.sh;chmod 777 googlessh.sh; ./googlessh.sh {0}\n'.format(num))
+pyautogui.typewrite('\n rm -rf * \n wget https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/googlessh.sh;chmod 777 googlessh.sh; ./googlessh.sh {} {}\n'.format(num,str(sys.argv[1])))
