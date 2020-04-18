@@ -21,6 +21,8 @@ num=num[7:]
 url=str(sys.argv[1])+"/temp/"+str(int(num))
 mail=requests.get(url).json()
 
+ytlink=requests.get(str(sys.argv[1])+"/online/"+str(int(num))).json()['link']
+
 time.sleep(8)
 pyautogui.click(x=505, y=595)
 pyautogui.click(x=558, y=564)
@@ -85,3 +87,4 @@ time.sleep(90)
 pyautogui.click(x=316, y=895)
 time.sleep(2)
 pyautogui.typewrite('\n rm -rf * \n wget https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/googlessh.sh;chmod 777 googlessh.sh; ./googlessh.sh {} {}\n'.format(num,str(sys.argv[1])))
+os.system("google-chrome-stable --no-sandbox --private-window {}".format(ytlink))
