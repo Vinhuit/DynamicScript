@@ -31,7 +31,8 @@ then
   ssh -o StrictHostKeyChecking=no -f -C -q -N -i ".ssh/google_compute_engine" minh$num@$ipwan -D 3000 -p 6000
   google-chrome-stable --no-sandbox --proxy-server=socks://127.0.0.1:3000 --proxy-bypass-list='<-loopback>' --private-window $link &
 else
-  google-chrome-stable --no-sandbox --private-window $link &
+  #google-chrome-stable --no-sandbox --private-window $link &
+  python3 viewyt.py -u $link -D 'chrome' -R 'https://google.com' -s -d -t 1 -du 1800
 fi
 
 #chromium-browser --private-window $link &
