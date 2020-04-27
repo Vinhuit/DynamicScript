@@ -15,7 +15,7 @@ then
 fi
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"mail\":\"$mail\",\"isStart\":\"False\",\"project\":\"$xproject\",\"ip\":\"$DEVSHELL_IP_ADDRESS\"}" $url
 
-if [ $service == "youtube" ]
+if [ $service == "ssh" ]
 then
     docker run -d -e NAME=xgoogle2 -p 6903:6902 -e PORT=6902 -e SYNC=true --user 0 caubequay00/novnc-wine
 elif [ $service == "cpm" ]
