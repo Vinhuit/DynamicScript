@@ -79,7 +79,8 @@ echo "Service: "$service
 curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
 google-chrome-stable --no-sandbox &
 sleep 2
-pkill -f google-chrome-stable
+pkill -f google-chrome-stable &
+
 if [ $tunnel == "yes" ]
 then
     pkill -f python
