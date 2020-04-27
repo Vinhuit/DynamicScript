@@ -47,7 +47,7 @@ if __name__=='__main__':
 			from selenium.webdriver.support.wait import WebDriverWait
 			try:INSTALLED
 			except NameError:
-      				try:from urllib import urlopen
+				try:from urllib import urlopen
 				except:from urllib.request import urlopen
 				argv=['YTViewer',True]
 				exec(urlopen('https://raw.githubusercontent.com/Vinhuit/DynamicScript/master/install_webdriver.py').read().decode())
