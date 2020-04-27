@@ -63,7 +63,7 @@ pyautogui.press('enter')
 
 
 print("wait restart")
-time.sleep(20)
+time.sleep(15)
 #restart cloud shell
 pyautogui.click(x=1252, y=151)
 time.sleep(2)
