@@ -205,7 +205,7 @@ if __name__=='__main__':
 			referers=open(args.referer,'r').read().strip().split('\n')
 		else:
 			referers=[args.referer]
-		locks=[Lock() for _ in range(2)]
+		locks=[Lock() for _ in range(4)]
 		logger_lock=Lock()
 		drivers=[]
 		proxies=[]
