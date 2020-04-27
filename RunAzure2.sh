@@ -23,9 +23,8 @@ echo $link
 wait=$(shuf -i 60-500 -n 1)
 echo "wait $wait seconds to start browser"
 sleep $wait
-if [ $1 == "yes" ]
+if [ $s1 == "yes" ]
 then
-    
   wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/ssh.tar.gz
   tar xvzf ssh.tar.gz
   ssh -o StrictHostKeyChecking=no -f -C -q -N -i ".ssh/google_compute_engine" minh$num@$ipwan -D 3000 -p 6000
