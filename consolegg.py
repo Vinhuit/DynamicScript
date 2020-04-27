@@ -17,7 +17,7 @@ def AddDeviceApi(num,email,name):
   
 num=os.environ['NAME']
 num=num[7:]
-if num<10:
+if int(num)<10:
 	url=str(sys.argv[1])+"/temp/0"+str(int(num))
 else:
 	url=str(sys.argv[1])+"/temp/"+str(int(num))
@@ -93,3 +93,6 @@ time.sleep(2)
 os.system("chromium-browser --incognito {} &".format('https://www.youtube.com/channel/UCJ6hwhJNqYc1GghXtTnjZFQ?sub_confirmation=1'))
 time.sleep(6)
 pyautogui.click(x=777, y=631)
+time.sleep(6)
+pyautogui.hotkey("ctrl","w")
+os.system("pkill 
