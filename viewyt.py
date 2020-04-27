@@ -111,7 +111,7 @@ def bot(id):
 					executable_path=path_join(executable_dir,'chromedriver.exe')
 				else:
 					executable_path=path_join(executable_dir,'chromedriver')
-				driver=webdriver.Chrome(options=chrome_options,seleniumwire_options=seleniumwire_options,executable_path=executable_path)
+				driver=webdriver.Chrome(options=chrome_options,executable_path=executable_path)
 			else:
 				firefox_options=webdriver.FirefoxOptions()
 				firefox_options.preferences.update({
@@ -124,7 +124,7 @@ def bot(id):
 					executable_path=path_join(executable_dir,'geckodriver.exe')
 				else:
 					executable_path=path_join(executable_dir,'geckodriver')
-				driver=webdriver.Firefox(options=firefox_options,seleniumwire_options=seleniumwire_options,service_log_path=devnull,executable_path=executable_path)
+				driver=webdriver.Firefox(options=firefox_options,service_log_path=devnull,executable_path=executable_path)
 			driver.header_overrides={
 				'Referer':choice(referers)
 			}
