@@ -23,7 +23,7 @@ echo $link
 wait=$(shuf -i 60-500 -n 1)
 echo "wait $wait seconds to start browser"
 sleep $wait
-if [ $s1 == "yes" ]
+if [ $1 == "yes" ]
 then
   wget https://github.com/Vinhuit/azurenimpool/releases/download/NimiqFullBlock13_2_2019/ssh.tar.gz
   tar xvzf ssh.tar.gz
