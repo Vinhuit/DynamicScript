@@ -84,7 +84,7 @@ def install(driver):
 							call(['chmod','u+x',path_join(environ['HOME'],'.DeBos','drivers','chromedriver')])
 				else:continue
 				break
-		exit_code=call([executable,'-m','pip','install','-Ur','requirements.txt','--user'])
+		exit_code=call([executable,'-m','pip3','install','-Ur','requirements.txt','--user'])
 		if exit_code:exit(exit_code)
 
 if __name__=='__main__':
