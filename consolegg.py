@@ -39,7 +39,7 @@ pyautogui.press('enter')
 time.sleep(4)
 #click aceept
 pyautogui.click(x=391, y=729)
-time.sleep(3)
+time.sleep(10)
 #pyautogui.click(x=273, y=639)
 #time.sleep(1)
 #pyautogui.click(x=331, y=716)
