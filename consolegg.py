@@ -95,4 +95,3 @@ time.sleep(6)
 pyautogui.click(x=777, y=631)
 time.sleep(6)
 pyautogui.hotkey("ctrl","w")
-os.system("pkill 
