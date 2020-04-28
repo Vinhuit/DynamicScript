@@ -18,6 +18,8 @@ ip=$(curl ifconfig.me)
 timevn=$(TZ=Asia/Ho_Chi_Minh date)
 echo $user
 echo $link
+echo $link | grep -Eo '(http|https)://[^"]+' >link.txt
+link="link.txt"
 pkill -f google-chrome-stable
 #curl -k -s -o /dev/null -w '%{http_code}' -i -H "Accept: application/json" -H "Content-Type:application/json" -X PUT --data "{\"key\":\" \",\"link\":\"$link\",\"device\":\"$user\",\"times\":\"$timevn\",\"ip\":\"$ip\",\"tunnel\":\"$tunnel\",\"service\":\"$service\"}" $url
 wait=$(shuf -i 60-500 -n 1)
