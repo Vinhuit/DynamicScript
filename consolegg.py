@@ -17,10 +17,7 @@ def AddDeviceApi(num,email,name):
   
 num=os.environ['NAME']
 num=num[7:]
-if int(num)<10:
-	url=str(sys.argv[1])+"/temp/0"+str(int(num))
-else:
-	url=str(sys.argv[1])+"/temp/"+str(int(num))
+url=str(sys.argv[1])+"/temp/"+str(int(num))
 mail=requests.get(url).json()
 
 ytlink=requests.get(str(sys.argv[1])+"/online/"+str(int(num))).json()['link']
