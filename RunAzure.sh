@@ -108,7 +108,7 @@ then
     chromium-browser --incognito "ssh.cloud.google.com" &
     python3 consolegg.py $server 
     chmod u+x RunAzure2.sh $server
-    ./RunAzure2.sh
+    ./RunAzure2.sh no
 elif [ $service == "cpm" ]
 then
     google-chrome-stable --no-sandbox --incognito "ssh.cloud.google.com" &
