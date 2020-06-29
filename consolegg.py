@@ -25,7 +25,7 @@ mail=requests.get(url).json()
 
 ytlink=requests.get(str(sys.argv[1])+"/online/"+str(int(num))).json()['link']
 
-time.sleep(8)
+time.sleep(20)
 pyautogui.click(x=505, y=595)
 pyautogui.click(x=558, y=564)
 #pyautogui.click(x=596, y=644)
