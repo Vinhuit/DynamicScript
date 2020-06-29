@@ -14,9 +14,12 @@ def AddDeviceApi(num,email,name):
 	print(url)
 	response = requests.put(url, data=data,headers=headers)
 	return response
-  
-num=os.environ['NAME']
-num=num[7:]
+
+if "NUM" in os.environ:
+	num=os.environ['NUM']
+else:
+	num=os.environ['NAME']
+	num=num[7:]
 url=str(sys.argv[1])+"/temp/"+str(int(num))
 mail=requests.get(url).json()
 
@@ -37,6 +40,8 @@ time.sleep(4)
 #click aceept
 pyautogui.click(x=391, y=729)
 time.sleep(10)
+if "NUM" in os.environ:
+	exit(0)
 #pyautogui.click(x=273, y=639)
 #time.sleep(1)
 #pyautogui.click(x=331, y=716)
