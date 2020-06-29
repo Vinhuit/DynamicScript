@@ -101,7 +101,7 @@ then
     
 elif [ $service == "youtube" ]
 then
-    chmod u+x RunAzure2.sh $server
+    chmod u+x RunAzure2.sh
     ./RunAzure2.sh no
 elif [ $service == "cpm" ]
 then
