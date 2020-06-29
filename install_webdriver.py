@@ -46,7 +46,14 @@ def install(driver):
 				if choice in [str(x+1) for x in range(3)]:
 					files_links=[]
 					if choice=='1' or choice=='3':
-						driver_version=urlopen('https://chromedriver.storage.googleapis.com/LATEST_RELEASE').read().decode()
+						try:
+							process = subprocess.Popen("google-chrome-stable --version",shell=True, stdout=subprocess.PIPE)
+							stdout = process.communicate()[0]
+							version = '{}'.format(stdout).split(" ")[-2].split(".")[0]
+							version = "_"+version
+						except:
+							version = ""
+						driver_version=urlopen('https://chromedriver.storage.googleapis.com/LATEST_RELEASE' +version).read().decode()
 						if system=='Windows':
 							files_links.append('https://chromedriver.storage.googleapis.com/%s/chromedriver_win32.zip'%driver_version)
 						elif system=='Linux':
