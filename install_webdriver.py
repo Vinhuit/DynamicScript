@@ -5,6 +5,7 @@ from zipfile import ZipFile
 from tempfile import NamedTemporaryFile
 from platform import machine,system as get_system
 from subprocess import call
+import subprocess
 
 def reload_modules():
 	try:from importlib import reload
