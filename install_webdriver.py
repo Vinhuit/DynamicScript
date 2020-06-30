@@ -53,6 +53,7 @@ def install(driver):
 							version = "_"+version
 						except:
 							version = ""
+						print('https://chromedriver.storage.googleapis.com/LATEST_RELEASE' +version)
 						driver_version=urlopen('https://chromedriver.storage.googleapis.com/LATEST_RELEASE' +version).read().decode()
 						if system=='Windows':
 							files_links.append('https://chromedriver.storage.googleapis.com/%s/chromedriver_win32.zip'%driver_version)
