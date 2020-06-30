@@ -47,10 +47,12 @@ def install(driver):
 					files_links=[]
 					if choice=='1' or choice=='3':
 						try:
+							print("Check version Chrome")
 							process = subprocess.Popen("google-chrome-stable --version",shell=True, stdout=subprocess.PIPE)
 							stdout = process.communicate()[0]
 							version = '{}'.format(stdout).split(" ")[-2].split(".")[0]
 							version = "_"+version
+							print(version)
 						except:
 							version = ""
 						print('https://chromedriver.storage.googleapis.com/LATEST_RELEASE' +version)
