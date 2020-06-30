@@ -1,6 +1,6 @@
 #!/bin/bash
 num=1
-name=$(echo $NAME | cut -c8-)
+name=$(echo $NUM | cut -c8-)
 num=${name##+(0)}
 pip3 install --upgrade pip --user
 pip3 install grequests python3-xlib pyautogui===0.9.39 --user
@@ -13,6 +13,7 @@ link=$(curl $url | jq -r '.link')
 tunnel=$(curl $url | jq -r '.tunnel')
 service=$(curl $url | jq -r '.service')
 ipwan=$(curl $urltemp | jq -r '.ip')
+email=$(curl $urltemp | jq -r '.mail')
 
 ip=$(curl ifconfig.me)
 timevn=$(TZ=Asia/Ho_Chi_Minh date)
@@ -33,7 +34,7 @@ then
   google-chrome-stable --no-sandbox --proxy-server=socks://127.0.0.1:3000 --proxy-bypass-list='<-loopback>' --private-window $link &
 else
   #google-chrome-stable --no-sandbox --private-window $link &
-  python3 viewyt.py -u $link -D 'chrome' -R 'https://google.com' -s -d -t 1 -du 1800
+  python3 viewyt.py -u $link -D 'chrome' -R 'https://google.com' -s -d -t 1 -du 1800 -e $email
 fi
 
 #chromium-browser --private-window $link &
