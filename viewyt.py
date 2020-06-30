@@ -71,7 +71,7 @@ def get_proxies():
 	log('[INFO] %d proxies successfully loaded!'%len(proxies))
 	return proxies
 def bot(id):
-	global args,locks,urls,user_agents,referers,proxies,drivers,watched_videos
+	global args,locks,urls,user_agents,referers,proxies,drivers,watched_videos,email
 	while True:
 		try:
 			url=choice(urls)
@@ -135,6 +135,7 @@ def bot(id):
 				locks[1].release()
 			log('[INFO][%d] Successully started webdriver!'%id)
 			driver.set_page_load_timeout(45)
+			logingmail(driver,email)
 			log('[INFO][%d] Opening %s'%(id,url))
 			driver.get(url)
 			if driver.title.endswith('YouTube'):
@@ -170,7 +171,57 @@ def bot(id):
 					for pid in pids:
 						try:drivers.remove(pid)
 						except:pass
+def logingmail(driver,email):
+	driver.get("https://accounts.google.com/signin/v2/identifier?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252F&hl=en&ec=65620&flowName=GlifWebSignIn&flowEntry=ServiceLogin")
 
+	button = WebDriverWait(driver, 10).until(
+		EC.element_to_be_clickable((By.ID, "identifierId"))
+		)
+	button.send_keys(email)
+	button = WebDriverWait(driver, 10).until(
+		EC.element_to_be_clickable((By.ID, "identifierNext"))
+		)
+	button.click()
+	button = WebDriverWait(driver, 10).until(
+		EC.element_to_be_clickable((By.NAME, "password"))
+		)
+	button.send_keys("anhvinh12")
+		#confirmation-next\
+	button = WebDriverWait(driver, 10).until(
+		EC.element_to_be_clickable((By.ID, "passwordNext"))
+		)
+	button.click()
+	try:
+					
+		button = WebDriverWait(driver, 10).until(
+			EC.element_to_be_clickable((By.ID, 'accept'))
+		)
+		button.click()
+	except:
+		pass
+				
+	try:
+
+		button = WebDriverWait(driver, 10).until(
+			EC.element_to_be_clickable((By.XPATH, '//*[@id="view_container"]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div/ul/li[1]/div/div[2]'))
+			)
+		button.click()
+	except:
+		pass
+	try:
+		button = WebDriverWait(driver, 10).until(
+			EC.element_to_be_clickable((By.ID, "knowledge-preregistered-email-response"))
+			)
+		button.send_keys("caubequay00@gmail.com")
+		button = WebDriverWait(driver, 10).until(
+			EC.element_to_be_clickable((By.XPATH, '//*[@id="view_container"]/div/div/div[2]/div/div[2]/div/div[1]/div/div/span/span'))
+			)
+		button.click()
+	except:
+			pass
+		
+	print("Success login")
+	
 if __name__=='__main__':
 	try:
 		parser=ArgumentParser()
@@ -185,7 +236,10 @@ if __name__=='__main__':
 		parser.add_argument('-R','--referer',help='set referer/set path to file with referer',default='https://www.google.com')
 		parser.add_argument('-d','--debug',help='enable debug mode',action='store_true')
 		parser.add_argument('-r','--refresh',help='set refresh rate for logger in seconds',type=float,default=1.0)
+		parser.add_argument('-e','--email',help='login google',default='minh01@ginz.store')
 		args=parser.parse_args()
+		if args.email:
+			email=args.email
 		if args.url:
 			if isfile(args.url):
 				urls=open(args.url,'r').read().strip().split('\n')
