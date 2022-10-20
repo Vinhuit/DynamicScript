@@ -46,11 +46,11 @@ else
 fi;
 
 if [ -z "$asset_id" ]; then
-  echo "ERROR: version not found $VERSION"
+  errcho "ERROR: version not found $VERSION"
   exit 1
 fi;
 if [ "$asset_id" = "null" ]; then
-  echo "ERROR: file $FILE not found in version $VERSION"
+  errcho "ERROR: file $FILE not found in version $VERSION"
   exit 2
 fi;
 
