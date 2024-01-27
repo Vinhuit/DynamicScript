@@ -1,6 +1,6 @@
 wget https://github.com/indigo-dc/udocker/releases/download/1.3.12/udocker-1.3.12.tar.gz
 wget https://github.com/Vinhuit/youtube-live/releases/download/test/appserver.py
-python3 appserver.py &
+#python3 appserver.py &
 ./static-web-server -p 8000 - . -z &
 tar zxvf udocker-1.3.12.tar.gz
 chmod 777 -R udocker-1.3.12
