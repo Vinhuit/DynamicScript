@@ -7,10 +7,10 @@
 #export PATH=`pwd`/udocker-1.3.12/udocker:$PATH
 #udocker-1.3.12/udocker/udocker --allow-root pull caubequay00/qumineproxy2
 #udocker-1.3.12/udocker/udocker --allow-root run caubequay00/qumineproxy2 | tee qli.log
-pkill -f rqiner-x86
-wget  https://github.com/Qubic-Solutions/HiveOS/releases/download/EP112/rqiner-x86-CPU.v.0.7.0.tar.gz -O rqiner-x86-CPU.v.0.7.0.tar.gz
-tar xvf rqiner-x86-CPU.v.0.7.0.tar.gz
-chmod 777 rqiner-x86/rqiner-x86-ivybridge
-./rqiner-x86/rqiner-x86-ivybridge  -t $1 -i EJJEPQZIBLDQVETDFTCBONQSXQEBOTGLVZIEVVUZOCYCIWNGPHHXNNZGCOVE -l xrhin$RANDOM &
+pkill -f rqiner-x86-ivybridge
+wget  https://github.com/Qubic-Solutions/rqiner-builds/releases/download/v0.8.0/rqiner-x86-ivybridge -O rqiner-x86-ivybridge
+
+chmod 777 rqiner-x86-ivybridge
+./rqiner-x86-ivybridge  -t $1 -i EJJEPQZIBLDQVETDFTCBONQSXQEBOTGLVZIEVVUZOCYCIWNGPHHXNNZGCOVE -l xrhin$RANDOM &
 
 
