@@ -1,0 +1,8 @@
+version: "2"
+tunnels:
+    web:
+        proto: http
+        addr: 14002
+    ssh:
+        proto: tcp
+        addr: 28972
