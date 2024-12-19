@@ -5,4 +5,4 @@ tunnels:
         addr: 14002
     ssh:
         proto: tcp
-        addr: 28972
+        addr: 28967
